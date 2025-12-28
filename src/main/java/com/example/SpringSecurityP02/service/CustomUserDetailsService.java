@@ -12,11 +12,25 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        if (!username.equals("paras")){
-            throw new UsernameNotFoundException("User Not found");
-        }
-        String encodedPass= new BCryptPasswordEncoder().encode("root");
-        return User.withUsername("paras").password("root").roles("USER ").build();
+        /*
+            if (!username.equals("paras")){
+                 throw new UsernameNotFoundException("User Not found");
+             }
+             String encodedPass= new BCryptPasswordEncoder().encode("root");
+             return User.withUsername("paras").password("root").roles("USER ").build();
+        */
 
+        String encodedPass1= new BCryptPasswordEncoder().encode("root");
+        if(username.equals("paras")){
+            return User.withUsername("paras").password(encodedPass1).roles("ADMIN").build();
+        }
+
+        String encodedPass2= new BCryptPasswordEncoder().encode("root");
+
+        if(username.equals("prachi")){
+            return User.withUsername("prachi").password(encodedPass2).roles("USER").build();
+        }
+
+        throw new UsernameNotFoundException("User not found");
     }
 }
