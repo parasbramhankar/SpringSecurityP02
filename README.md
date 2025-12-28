@@ -1,4 +1,5 @@
-Excellent — this is a **very good, realistic Spring Security setup**, and now you’re at the stage where understanding **how everything connects end-to-end** really matters.
+# In-Memory User data : using the CustomUserDetailsService class in service
+
 
 Below is a **FULL OVERVIEW**, explained **step by step**, in **simple language**, covering:
 
@@ -11,7 +12,7 @@ Below is a **FULL OVERVIEW**, explained **step by step**, in **simple language**
 
 ---
 
-# 🧩 1. BIG PICTURE — WHAT THIS PROJECT IS DOING
+## 🧩 1. BIG PICTURE — WHAT THIS PROJECT IS DOING
 
 Your application uses:
 
@@ -350,13 +351,4 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 Your application uses Spring Security with a custom authentication flow where user credentials are loaded by `CustomUserDetailsService`, verified using BCrypt encryption, and authorized using role-based annotations (`@PreAuthorize`). While the current implementation simulates user storage using hard-coded logic, the same architecture directly maps to a production-ready database-driven system with minimal changes.
 
----
 
-If you want next:
-
-* 🔄 Convert this **exact setup** to **JPA + MySQL**
-* 🔐 Add **JWT authentication**
-* 🧪 Debug authentication issues
-* 📘 Interview-ready explanation
-
-Just tell me 👍
